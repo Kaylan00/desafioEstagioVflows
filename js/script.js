@@ -1,3 +1,4 @@
+import { validacaoCep } from "./apiCep.js";
 $(document).ready(() => {
   let produtos = []; 
   let anexos = [];
@@ -200,7 +201,8 @@ $(document).ready(() => {
       telefone &&
       produtosValidos &&
       anexosValidos &&
-      cnpj.length == 14
+      cnpj.length == 14 &&
+      validacaoCep
     ) {
       saveFormDataToSession();
       mostrarModalCarregamento();
@@ -228,7 +230,9 @@ $(document).ready(() => {
       if (cnpj.length !== 14) {
         $('#cnpj').next('.error-message').text('O CNPJ deve conter 14 números.').show();
         alert('Por favor preencha o cnpj corretamente!')
-      }
+      }else if(validacaoCep === false){
+        alert('CEP inválido. Por favor, insira um CEP válido.');
+    }
     }
   });
 
@@ -371,8 +375,7 @@ $(document).ready(() => {
   });
 
   //"Função" pra filtrar os dados que podem entar no input
-  $("#cep,#cnpj, #numero, #telefone, .valorUnitario, #inscricaoMunicipal, #inscricaoEstadual").on("input", function () {
+  $("#cep,#cnpj, #numero, #telefone, #inscricaoMunicipal, #inscricaoEstadual").on("input", function () {
     this.value = this.value.replace(/\D/g, "");
   });
-
 });

@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="column">
                     <label for="contato">Nome da pessoa de contato <span>*</span></label>
-                    <input type="text" id="contato" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');" required>
+                    <input type="text" id="contato" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');">
                 </div>
                 <div class="column">
                     <label for="telefone">Telefone <span>*</span></label>
@@ -111,7 +111,7 @@
                             <div class="row">
                                 <div>
                                     <label for="unidadeMedida">Unidade de Medida <span>*</span></label>
-                                    <input type="text" class="unidadeMedida form-control">
+                                    <input type="text" class="unidadeMedida form-control " inputmode="text">
                                 </div>
                                 <div>
                                     <label for="quantidadeEstoque">Quantidade em Estoque <span>*</span></label>
@@ -133,7 +133,7 @@
                 </div>
                 <button id="adicionarProduto" type="button">Adicionar Produto</button>
             </div>
-            <!-- Tabela de Anexos -->
+            <!-- Anexos -->
             <h3>Anexos</h3>
             <div class="containers fluig-style-guide">
                 <h4>Itens</h4>
@@ -162,9 +162,8 @@
             <p>Enviando dados...</p>
         </div>
     </div>
-     <script src="js/script.js"></script>
-    <script src="js/apiCep.js"></script>
-
+    <script src="js/script.js" type="module"></script>
+    <script src="js/apiCep.js" type="module"></script>
 </body>
 
 </html>
