@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+
+    <link rel="stylesheet" type="text/css" href="https://fluig.totvs.com/style-guide/css/fluig-style-guide.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h2>CADASTRO FORNCEDOR/PRODUTO</h2>
+
+    <form id="cadastroFornecedorForm">
+
+        <h3>Dados de Fornecedor</h3>
+        <div class="containers">
+
+            <div class="row">
+                <div class="column">
+                    <label for="razaoSocial">Razão Social <span>*</span></label>
+                    <input type="text" id="razaoSocial">
+                </div>
+                <div class="column">
+                    <label for="cnpj">CNPJ <span>*</span></label>
+                    <input type="text" id="cnpj" inputmode="numeric" pattern="[0-9]*" required>
+                    <p class="error-message" style="color: red; display: none;">Campo obrigatório.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="nomeFantasia">Nome Fantasia <span>*</span></label>
+                    <input type="text" id="nomeFantasia" required>
+                </div>
+                <div class="column">
+                    <label for="inscricaoEstadual">Inscrição Estadual</label>
+                    <input type="text" id="inscricaoEstadual">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="cep">CEP <span>*</span></label>
+                    <input type="text" id="cep" inputmode="numeric" required>
+                    <p id="cepError" class="error-message" style="color: red;"></p>
+                </div>
+                <div class="column">
+                    <label for="inscricaoMunicipal">Inscrição Municipal</label>
+                    <input type="text" id="inscricaoMunicipal">
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="endereco">Endereço <span>*</span></label>
+                    <input type="text" id="endereco" required>
+                </div>
+                <div class="column">
+                    <label for="numero">Numero <span>*</span></label>
+                    <input type="text" id="numero" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="complemento">Complemento<span>*</span></label>
+                    <input type="text" id="complemento" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="bairro">Bairro<span>*</span></label>
+                    <input type="text" id="bairro" required>
+                </div>
+                <div class="column">
+                    <label for="municipio">Municipio<span>*</span></label>
+                    <input type="text" id="municipio" required>
+                </div>
+                <div class="column">
+                    <label for="estado">Estado <span>*</span></label>
+                    <input type="text" id="estado" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <label for="contato">Nome da pessoa de contato <span>*</span></label>
+                    <input type="text" id="contato" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '');">
+                </div>
+                <div class="column">
+                    <label for="telefone">Telefone <span>*</span></label>
+                    <input type="text" id="telefone" inputmode="numeric" pattern="[0-9]*" required>
+                </div>
+            </div>
+        </div>
+        <!-- Produtos -->
+        <h3>Produtos</h3>
+        <div>
+            <div class="containers">
+                <div id="lista-produto">
+                    <div class="produto">
+                        <div class="fluig-style-guide">
+                            <button type="button" class="excluirProduto"><img src="img/flaticon-trash.png"
+                                    alt="excluir"></button>
+                            <img src="img/caixa.png" alt="caixa" id="imagem-caixa-produto">
+                        </div>
+                        <div class="content-titulo-produto">
+                            <div>
+                                <label for="input-nome-produto">Produto <span>*</span></label>
+                                <input type="text" required id="input-nome-produto" class="nomeProduto">
+                            </div>
+                            <div class="row">
+                                <div>
+                                    <label for="unidadeMedida">Unidade de Medida <span>*</span></label>
+                                    <input type="text" class="unidadeMedida form-control">
+                                </div>
+                                <div>
+                                    <label for="quantidadeEstoque">Quantidade em Estoque <span>*</span></label>
+                                    <input type="number" class="quantidadeEstoque  form-control" inputmode="numeric"
+                                        pattern="[0-9]*" required>
+                                </div>
+                                <div>
+                                    <label for="valorUnitario">Valor Unitário <span>*</span></label>
+                                    <input type="number" class="valorUnitario  form-control" inputmode="numeric"
+                                        pattern="[0-9]*" required>
+                                </div>
+                                <div>
+                                    <label for="valorTotal">Valor Total <span>*</span></label>
+                                    <input type="number" class="valorTotal disabled form-control" required readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="adicionarProduto" type="button">Adicionar Produto</button>
+            </div>
+            <!-- Tabela de Anexos -->
+            <h3>Anexos</h3>
+            <div class="containers fluig-style-guide">
+                <h4>Itens</h4>
+                <div id="lista-anexos">
+                    <div class="anexo">
+                        <button class="visualizarAnexo" data-anexo-id="" type="button"><img src="img/flaticon-view.png" 
+                            alt="ver"></button>
+
+                        <button class="excluirAnexo" data-anexo-id="" type="button"><img src="img/flaticon-trash.png"
+                                alt="excluir"></button>
+                        <label for="arquivoAnexo" id="labelFile">Arquivo do Anexo <span class="texto">*</span></label>
+                        <input type="file" class="arquivoAnexo" required>
+                    </div>
+                </div>
+                <div>
+                    <button id="adicionarAnexo" type="button">Incluir Anexo</button>
+                </div>
+            </div>
+            <button id="salvarFornecedor" type="submit">Salvar Fornecedor</button>
+            <a id="downloadJSON" style="display: none" download="dados_fornecedor.json">Baixar JSON</a>
+    </form>
+    </div>
+    <div id="loadingModal" class="modal">
+        <div class="modal-content">
+            <div class="loader"></div>
+            <p>Enviando dados...</p>
+        </div>
+    </div>
+    <script src="/js/script.js" ></script>
+    <script src="/js/apiCep.js"></script>
+</body>
+
+</html>
