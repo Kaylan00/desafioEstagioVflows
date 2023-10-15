@@ -2,4 +2,4 @@
 <h1>LEIA:</h1>
 Desafio estagio
 
-<h2> Não achei tão complexo o desafio em sí por eu estar utilizando tecnologias que ja estou acostumado, mas oque me fez quebrar a cuca era sobre o fluig que é uma coisa nova que eu nunca tinha visto antes, confesso que por causa do tempo eu não consegui me aprofundar muito sobre ele, mas estou a disposição de aprender coisas novas ate mais sobre o fluig só preciso de um pouquinho mais de tempo :( , agradeço feedbacks sobre meu código, Obrigado por ler! </h2>
+<h3> Não achei tão complexo o desafio em si, porque estou utilizando tecnologias com as quais já estou familiarizado. No entanto, o que me fez quebrar a cabeça foi o Fluig, que é algo novo para mim e eu não sabia muito bem como aplicá-lo no meu código. A maioria das estilizações foi feita por mim. Confesso que, devido à falta de tempo, não pude me aprofundar muito nele, mas estou disposto a aprender coisas novas, inclusive sobre o Fluig. Só preciso de um pouco mais de tempo :( . Agradeço por qualquer feedback sobre o meu código. Obrigado por ler! </h3>
