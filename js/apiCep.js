@@ -4,7 +4,7 @@ $('#cep').blur(function () {
     let valor = this.value;
     let cepError = $('#cepError'); 
 
-    // Verificar se o CEP tem um formato válido
+    // Verificar se o CEP tem um formato válido e colocando a api
     if (/^\d{8}$/.test(valor)) {
         $.get('https://viacep.com.br/ws/' + valor + '/json/', function (dados) {
             if (!dados.erro) {
@@ -22,7 +22,6 @@ $('#cep').blur(function () {
     }
 });
 
-// Adicione uma função para impedir o envio do formulário se houver um erro de CEP
 $('#cadastroFornecedorForm').submit(function (event) {
     let cepError = $('#cepError');
     if (cepError.text() !== '') {
