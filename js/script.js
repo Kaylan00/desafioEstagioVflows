@@ -315,8 +315,7 @@ $(document).ready(() => {
         </div>
         <div >
             <label for="valorUnitario">Valor Unitário <span>*</span></label>
-            <input type="number" class="valorUnitario  form-control" inputmode="numeric"
-                pattern="[0-9]*" required>
+           <input type="number" class="valorUnitario  form-control" step="0.01" required
         </div>
         <div >
             <label for="valorTotal">Valor Total <span>*</span></label>
