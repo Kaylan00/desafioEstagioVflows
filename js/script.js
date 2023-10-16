@@ -228,11 +228,13 @@ $(document).ready(() => {
 
     } else {
       if (cnpj.length !== 14) {
-        $('#cnpj').next('.error-message').text('O CNPJ deve conter 14 números.').show();
-        alert('Por favor preencha o cnpj corretamente!')
-      }else if(validacaoCep === false){
-        alert('CEP inválido. Por favor, insira um CEP válido.');
-    }
+          $('#cnpj').next('.error-message').text('O CNPJ deve conter 14 números.').show();
+          alert('Por favor preencha o cnpj corretamente!')
+      }else if (validacaoCep === false) {
+          alert('CEP inválido. Por favor, insira um CEP válido.');
+      }else{
+        alert('Preencha todos os campos !')
+      }
     }
   });
 
