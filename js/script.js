@@ -337,22 +337,19 @@ $(document).ready(() => {
   // "Função" pra visualizar anexo
   $("#lista-anexos").on("click", ".visualizarAnexo", function () {
     const $anexo = $(this).closest(".anexo");
+  const $arquivoAnexo = $anexo.find(".arquivoAnexo")[0];
 
+  if ($arquivoAnexo.files.length > 0) {
+    const arquivo = $arquivoAnexo.files[0];
 
-    const $arquivoAnexo = $anexo.find("#arquivoAnexo")[0];
+    const url = window.URL.createObjectURL(arquivo);
 
-
-    if ($arquivoAnexo.files.length > 0) {
-      const arquivo = $arquivoAnexo.files[0];
-
-      const url = window.URL.createObjectURL(arquivo);
-
-      const downloadLink = document.createElement("a");
-      downloadLink.href = url;
-      downloadLink.target = "_blank";
-      downloadLink.download = arquivo.name;
-      downloadLink.click();
-    }
+    const downloadLink = document.createElement("a");
+    downloadLink.href = url;
+    downloadLink.target = "_blank";
+    downloadLink.download = arquivo.name;
+    downloadLink.click();
+  }
   });
 
   $("#lista-anexos").on("click", ".excluirAnexo", function () {
