@@ -1,1 +1,1 @@
-Formulário com validações feitas com jquery e com uma api de preenchimento do endereço!
+Formulário com validações realizadas através do jQuery e integração com uma API para preenchimento automático do endereço! Neste formulário, o usuário pode anexar arquivos, visualizar os arquivos anexados, adicionar produtos, sendo obrigatório ter pelo menos 1 produto e um anexo. Após o envio do formulário, uma tela simples de carregamento é exibida, e um arquivo no formato JSON, contendo as informações do formulário, incluindo anexos e produtos, é baixado automaticamente.
