@@ -372,7 +372,8 @@ $(document).ready(() => {
   });
 
   //"Função" pra filtrar os dados que podem entar no input
-  $("#cep,#cnpj, #numero, #telefone, #inscricaoMunicipal, #inscricaoEstadual").on("input", function () {
+  $('#cnpj').inputmask('99.999.999/9999-99')
+  $("#cep, #numero, #telefone, #inscricaoMunicipal, #inscricaoEstadual").on("input", function () {
     this.value = this.value.replace(/\D/g, "");
   });
 });
